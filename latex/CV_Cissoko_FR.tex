@@ -1,0 +1,167 @@
+% ======================================================================
+%  CV — Mamadou Ben Hamidou CISSOKO, Ph.D.  (FR, industry version, 2 pages)
+%  Compile with pdfLaTeX (Overleaf default).
+%  Entry commands: \cvjob{Org}{Dates}{Role}{Place}, \cvproject{Title}{Dates}{Keywords},
+%  \cvpub{Tag}{Reference}{URL or empty}, \cvdegree{Degree}{Dates}{School}.
+%  Escape special characters: \&  \%  \$  \#  \_
+% ======================================================================
+\documentclass[10pt,a4paper]{article}
+\pdfgentounicode=1            % clean text extraction for applicant-tracking systems (ATS)
+\input{glyphtounicode}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=11mm,bottom=11mm,left=13mm,right=13mm]{geometry}
+\usepackage{xcolor}
+\usepackage[final]{microtype}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks,unicode]{hyperref}
+
+\definecolor{accent}{HTML}{2E7D32}
+\definecolor{muted}{HTML}{4A5563}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\linespread{1.0}
+
+\titleformat{\section}{\color{accent}\normalsize\bfseries}{}{0pt}{}[\vspace{-3pt}{\color{accent!35}\rule{\linewidth}{0.5pt}}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+\newenvironment{cvitems}{\begin{itemize}[leftmargin=11pt,itemsep=0.5pt,topsep=1pt,parsep=0pt,label={\color{accent}\scriptsize$\blacktriangleright$}]\small}{\end{itemize}\vspace{2pt}}
+
+% \cvjob{Organisation}{Dates}{Role}{Place}
+\newcommand{\cvjob}[4]{%
+  \noindent\textbf{#1}\hfill{\small\bfseries\textcolor{accent}{#2}}\par
+  \noindent{\small\itshape\textcolor{muted}{#3}}\hfill{\small\itshape\textcolor{muted}{#4}}\par}
+% \cvproject{Title}{Dates}{Keywords}
+\newcommand{\cvproject}[3]{%
+  \noindent\textbf{#1}\hfill{\small\bfseries\textcolor{accent}{#2}}\par
+  \noindent{\footnotesize\textcolor{muted}{#3}}\par}
+% \cvpub{tag}{reference}{url}   (empty url {} for submitted papers)
+\newcommand{\cvpub}[3]{%
+  \noindent\hangindent=9mm\hangafter=1\makebox[9mm][l]{\small\bfseries\textcolor{accent}{[#1]}}{\small #2\if\relax\detokenize{#3}\relax\else{} \href{#3}{\textcolor{accent}{\textbf{[\linktext]}}}\fi}\par\vspace{1.5pt}}
+% \cvdegree{Degree}{Dates}{School}  -- one line
+\newcommand{\cvdegree}[3]{%
+  \noindent{\small\textbf{#1}, \textcolor{muted}{#3}}\hfill{\small\bfseries\textcolor{accent}{#2}}\par\vspace{1pt}}
+% \cvskill{Category}{List}
+\newcommand{\cvskill}[2]{\textbf{#1} & #2\\[1.2pt]}
+\newcommand{\linktext}{Lien}
+\newcommand{\portfolio}{benprano.github.io}   % <-- adresse de votre portfolio (à vérifier !)
+\hypersetup{pdftitle={CV -- Mamadou Ben Hamidou Cissoko -- Chercheur en Machine Learning},pdfauthor={Mamadou Ben Hamidou Cissoko},pdfkeywords={machine learning, deep learning, séries temporelles, modèles de diffusion, LLM, RAG, vision par ordinateur, PyTorch}}
+
+\begin{document}
+%% ================= EN-TÊTE =================
+{\LARGE\bfseries Mamadou Ben Hamidou {\color{accent}CISSOKO}}\,{\large\color{muted} Ph.D.}\par\vspace{2pt}
+{\color{accent}\bfseries Chercheur en Machine Learning \,|\, Séries temporelles, modèles génératifs \& systèmes LLM}\par\vspace{3pt}
+{\small Nantes, France \;|\; \href{tel:+33753561578}{+33 7 53 56 15 78} \;|\; \href{mailto:cissbenprano@gmail.com}{\textbf{cissbenprano@gmail.com}} \;|\; \href{https://\portfolio}{\textcolor{accent}{\textbf{\portfolio}}}\par
+\href{https://www.linkedin.com/in/mamadou-ben-hamidou-cissoko-2171b0166/}{\textcolor{accent}{\textbf{linkedin.com/in/mamadou-ben-hamidou-cissoko-2171b0166}}} \;|\;
+\href{https://github.com/benprano}{\textcolor{accent}{\textbf{github.com/benprano}}} \;|\;
+\href{https://scholar.google.com/citations?user=k_2SuOkAAAAJ\&hl=en\&oi=sra}{\textcolor{accent}{\textbf{Google Scholar}}} \;|\;
+\href{https://orcid.org/0009-0002-1840-9325}{\textcolor{accent}{\textbf{ORCID}}}\par}
+\vspace{2pt}{\color{accent}\rule{\linewidth}{1.2pt}}
+
+%% ================= PROFIL =================
+\section{PROFIL}
+{\small Docteur en informatique, 6 ans de conception de modèles de deep learning pour des données réelles et imparfaites : dossiers de réanimation creux et irréguliers, images de drone de 20 mégapixels, agents LLM utilisant des outils. Je conçois de nouvelles architectures (diffusion, JEPA, modèles d’espace d’états et récurrents) et je les amène jusqu’à un code PyTorch testé et reproductible sur HPC. Bilan : 2 articles de revue et 2 de conférence, 3 autres en cours d’évaluation, des publications en open source, relecteur pour NeurIPS, UAI et AISTATS. Je recherche un poste de \textbf{chercheur en ML appliqué, ingénieur de recherche ou ingénieur ML} où les modèles doivent fonctionner sur des données réelles.}
+
+%% ================= COMPÉTENCES CLÉS =================
+\section{COMPÉTENCES CLÉS}
+{\small
+\begin{tabularx}{\linewidth}{@{}p{38mm}X@{}}
+  \cvskill{Modélisation}{Séries temporelles et prévision, imputation de données manquantes, modèles de diffusion (EDM), JEPA / apprentissage auto-supervisé, SSM/Mamba, Transformers, LSTM/GRU, GNN, quantification de l’incertitude et prédiction conforme, XAI}
+  \cvskill{LLM \& agents}{Prompt engineering (sorties structurées, few-shot, auto-cohérence, protection contre l’injection), RAG (LangChain, Qdrant, hybride BM25 + dense, reranking), LangGraph, MCP, appel d’outils, API OpenAI, DeepEval, Gradio, Hugging Face, vLLM}
+  \cvskill{Vision par ordinateur}{Détection de petits objets, RT-DETRv2, DINOv2, YOLO, inférence par tuiles SAHI, Grad-CAM}
+  \cvskill{Ingénierie \& MLOps}{Python, PyTorch (DDP, FSDP), TensorFlow, Docker, Git, CI/CD, PyTest, MLflow, W\&B, OpenTelemetry, Prometheus, ONNX Runtime, Slurm/HPC, SQL, C++}
+\end{tabularx}}
+
+%% ================= EXPÉRIENCE =================
+\section{EXPÉRIENCE}
+\cvjob{\href{https://www.ls2n.fr/}{LS2N, Laboratoire des Sciences du Numérique de Nantes (CNRS UMR 6004)}}{Nov. 2024 – présent}{Chercheur post-doctoral, IA pour séries temporelles cliniques et jumeaux numériques de patients}{Nantes, France}
+\begin{cvitems}
+  \item Pilotage de l’architecture technique d’un simulateur de patient haute fidélité (jumeau numérique sous anesthésie générale) pour l’aide à la décision clinique et la formation médicale ; conception du moteur neuronal temporel qui simule en temps réel la physiologie peropératoire multivariée.
+  \item Développement de pipelines d’inférence en streaming : prédiction à faible latence, personnalisation par patient et sorties interprétables sous contraintes cliniques (PyTorch, intégration Unity, HPC).
+  \item Création de trois modèles d’imputation et de prédiction conjointes pour séries creuses (\textbf{TF-JEPA, DyFAIP, FASTER} ; 3 articles en cours d’évaluation), évalués sur MIMIC-III, PhysioNet-2012 et ETT.
+  \item Conception de \textbf{FASTER-P}, un modèle récurrent unique pour tous les types et taux de données manquantes (MCAR/MAR/MNAR, 20–80 \%), comparé sur masques identiques à BRITS, GRU-D, SAITS, TimesNet et ImputeFormer ; extension en imputeur par diffusion EDM.
+  \item Développement de la \textbf{diffusion résiduelle calibrée}, qui ajoute une incertitude calibrée à tout imputeur en 1 à 2 passes de réseau : couverture brute de \textbf{90,9 \%} pour un intervalle à 90 \% contre 77–79 \% pour les échantillonneurs standard, et \textbf{CRPS inférieur de 31 à 41 \%} à une diffusion complète sur le même modèle (préliminaire).
+\end{cvitems}
+
+\cvjob{\href{https://icube.unistra.fr}{ICube, Université de Strasbourg (CNRS UMR 7357)}}{Oct. 2020 – Oct. 2024}{Doctorant, réseaux profonds temporels pour trajectoires irrégulières en réanimation}{Strasbourg, France}
+\begin{cvitems}
+  \item Conception et publication en open source de deux architectures à mémoire dynamique pour dossiers patients creux et irréguliers, \textbf{MWTA-LSTM} et \textbf{AMITA-LSTM}, atteignant une \textbf{AUROC de 0,93 et une AUPRC de 0,78} en prédiction du devenir sur eICU (plus de 200 000 admissions, 208 hôpitaux américains) ; publiées dans \textit{Information Sciences} et \textit{Expert Systems with Applications}.
+  \item Attention par variable et pondération fréquentielle expliquant chaque prédiction, explications validées avec des chefs de service de réanimation du CHU de Strasbourg.
+  \item Pipelines automatisés d’ingestion et de prétraitement pour MIMIC-III (plus de 40 000 patients) et eICU, avec un pooling adaptatif limitant l’effet des valeurs extrêmes ; entraînement sur cluster HPC Slurm.
+\end{cvitems}
+
+\cvjob{ICube, Université de Strasbourg}{Avr. – Sep. 2020}{Stagiaire de recherche (Master) : détection d’anomalies interprétable (LSTM + shapelets, CAM)}{Strasbourg, France}
+\vspace{4pt}
+
+%% ================= PROJETS =================
+\section{PROJETS APPLIQUÉS}
+\cvproject{Images de drone : détecter des objets de quelques pixels}{2025 – 2026}{RT-DETRv2, DINOv2 ViT-B, YOLO26-P2, SAHI/ASAHI, DBSCAN, Grad-CAM}
+\begin{cvitems}
+  \item Intégration d’un backbone auto-supervisé DINOv2 ViT-Base avec projection multi-échelle (P3–P5) dans RT-DETRv2 ; inférence en deux passes sur images de 20 MP (scan global 3200\,$\times$\,3200 puis découpage SAHI dynamique avec fusion Greedy NMM).
+  \item Conception d’un module d’attention spatiale Top-K réinjectant les caractéristiques haute résolution P2/P3 dans la tête de détection YOLO, avec découpage guidé par DBSCAN, suréchantillonnage des classes rares et audit par IoU de chaque détection manquée.
+\end{cvitems}
+
+\cvproject{Agents LLM : recherche hybride, outils et observabilité}{2026}{LangGraph, MCP, BM25 + dense, RRF, cross-encoder, Pydantic, DeepEval, OpenTelemetry, React}
+\begin{cvitems}
+  \item Agent de commerce conversationnel qui oriente chaque requête vers la recherche documentaire ou vers des outils typés (suivi de commande, panier) ; recherche hybride BM25 + dense fusionnée par Reciprocal Rank Fusion et réordonnée par un cross-encoder.
+  \item Contrôles qualité automatisés en CI (PyTest + DeepEval sur la fidélité et la pertinence du contexte) et traçage OpenTelemetry/Prometheus des chemins d’agents, de la latence des tokens et de la fiabilité des appels d’outils.
+  \item Applications multi-agents LangGraph (recherche web, revue de code, Q\&R sur PDF, débat) avec serveurs MCP et interfaces React/Vite.
+\end{cvitems}
+
+\cvproject{RAG sur documents PDF avec citation des pages}{2026}{LangChain, Qdrant (Docker), OpenAI text-embedding-3-large, gpt-4o-mini}
+\begin{cvitems}
+  \item Pipeline d’indexation : chargement de PDF avec métadonnées de page, découpage récursif (extraits de 1 000 caractères, chevauchement de 400), embeddings stockés dans une base vectorielle Qdrant ; réponse aux questions par recherche de similarité top-3, avec renvoi à la page source.
+\end{cvitems}
+
+\cvproject{Agent LLM à outils et prompt engineering}{2026}{API OpenAI (mode JSON), gpt-4o-mini, Gradio, sorties structurées, few-shot, auto-cohérence}
+\begin{cvitems}
+  \item Agent raisonnant par étapes explicites START, PLAN, TOOL, REVIEW et OUTPUT en JSON, avec routage côté code vers une API météo et des outils shell, une boucle bornée à 15 étapes et une interface Gradio qui affiche chaque étape en direct.
+  \item Conception de prompts pour la production : rôle et règles, exemples few-shot, sorties au schéma JSON, ancrage avec citations, protections contre l’injection de prompt et listes blanches d’outils, vote par auto-cohérence et auto-critique, avec vérification automatique des réponses du modèle.
+\end{cvitems}
+
+\cvproject{Détection d’anomalies dans des réseaux de capteurs industriels}{2025 – 2026}{MTGNN, GNN-LSTM, SWaT, WADI}
+\begin{cvitems}
+  \item Détecteurs à base de graphes évalués sur des bancs de traitement et de distribution d’eau (51 et 120+ capteurs) sous cyberattaques.
+\end{cvitems}
+
+%% ================= PUBLICATIONS =================
+\section{PUBLICATIONS}
+\cvpub{J.1}{\textbf{Cissoko, M. B. H.}, Castelain, V., et al. (2025). Predicting and Interpreting Healthcare Trajectories from Irregularly Collected Sequential Patient Data Using AMITA. \textit{Information Sciences}, 705.}{https://doi.org/10.1016/j.ins.2025.121977}
+\cvpub{J.2}{\textbf{Cissoko, M. B. H.}, Castelain, V., et al. (2025). Multi-Way Adaptive Time-Aware LSTM for Irregularly Collected Sequential ICU Data. \textit{Expert Systems with Applications}, 261.}{https://doi.org/10.1016/j.eswa.2024.125548}
+\cvpub{C.1}{\textbf{Cissoko, M. B. H.}, et al. (2024). Modeling Temporal Dynamics in Irregular ICU Data Using MWTA-LSTM. \textit{EPIA 2024}, Springer LNCS.}{https://link.springer.com/chapter/10.1007/978-3-031-73500-4_3}
+\cvpub{C.2}{\textbf{Cissoko, M. B. H.}, et al. (2024). Predicting Patient Health Outcomes with AMITA from Irregular Time Series. \textit{ICONIP 2024}, Springer LNCS.}{https://link.springer.com/chapter/10.1007/978-981-96-6957-8_28}
+\cvpub{S.1}{\textbf{Cissoko, M. B. H.}, Sinoquet, C., et al. FASTER: Frequency-Conditioned Diffusion for Joint Imputation and Prediction in Sparse Time Series. \textit{Expert Systems with Applications} (en cours d’évaluation).}{}
+\cvpub{S.2}{\textbf{Cissoko, M. B. H.}, Sinoquet, C., et al. DyFAIP: End-to-End Joint Imputation and Prediction in Irregular Time Series via Adaptive Frequency Transitions. \textit{Expert Systems with Applications} (en cours d’évaluation).}{}
+\cvpub{S.3}{\textbf{Cissoko, M. B. H.}, Sinoquet, C., et al. TF-JEPA: Time-Frequency Joint Embedding Predictive Architecture for Incomplete Time Series. (en cours d’évaluation).}{}
+
+%% ================= ENSEIGNEMENT =================
+\section{ENSEIGNEMENT \& SERVICE ACADÉMIQUE}
+\begin{cvitems}
+  \item \textbf{Chargé d’enseignement, Nantes Université} (nov. 2024 – présent) : Master (LSTM/GRU, Transformers, optimisation) et Licence (apprentissage statistique, métriques d’évaluation) ; TP PyTorch et scikit-learn pour plus de 60 élèves ingénieurs.
+  \item \textbf{Chargé d’enseignement, Université Nationale du Vietnam} (déc. 2024 – présent) : Master, modèles séquentiels et attention.
+  \item \textbf{Relecteur} : NeurIPS, UAI, AISTATS ; \textit{Information Sciences} (plus de 30 relectures), \textit{Neurocomputing}, \textit{Environmental Technology \& Innovation}.
+\end{cvitems}
+
+%% ================= FORMATION =================
+\section{FORMATION}
+\cvdegree{Doctorat en informatique}{2020 – 2024}{Université de Strasbourg (ICube)}
+\cvdegree{Master en informatique, Systèmes intelligents et multimédia}{2020}{Université Nationale du Vietnam (IFI), Hanoï}
+\cvdegree{Master en informatique, Ingénierie des données et décisionnel}{2020}{Université de La Rochelle}
+\cvdegree{Licence en informatique appliquée à la gestion des entreprises}{2013}{IUG, Bamako}
+
+%% ================= DIVERS =================
+\section{DISTINCTIONS, LANGUES \& RÉFÉRENCES}
+{\small
+\textbf{Distinctions :} finaliste (top 5), Vietnam AI Grand Challenge 2019 ; bourse d’excellence TIBCO-IFI 2020 ; CCNA et MCITP 2017.\par\vspace{1pt}
+\textbf{Langues :} français (langue maternelle), anglais (courant), vietnamien (notions).\par\vspace{1pt}
+\textbf{Références :} Pr Nicolas Lachiche et Pr Vincent Castelain (directeurs de thèse, Université de Strasbourg) ; Dr Christine Sinoquet (encadrante de post-doctorat, Nantes Université). Coordonnées sur demande.\par}
+
+\end{document}
